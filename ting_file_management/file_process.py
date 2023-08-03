@@ -1,5 +1,6 @@
 from ting_file_management.file_management import txt_importer
 from ting_file_management.queue import Queue
+import sys
 
 queueModel = Queue()  # instância
 
@@ -9,6 +10,7 @@ def process(path_file, instance: Queue):
 
     for element in instance.itens:
         if path_file in element["nome_do_arquivo"]:
+
             return
 
     dictionary = {
@@ -18,6 +20,7 @@ def process(path_file, instance: Queue):
     }
 
     instance.enqueue(dictionary)
+    print(dictionary)
 
 
 def remove(instance):
