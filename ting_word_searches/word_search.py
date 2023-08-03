@@ -1,5 +1,5 @@
 from ting_file_management.queue import Queue
-from ting_file_management.file_management import txt_importer
+
 
 def exists_word(word, instance: Queue):
     """Aqui irá sua implementação"""
@@ -10,8 +10,8 @@ def exists_word(word, instance: Queue):
         for i, linha in enumerate(element["linhas_do_arquivo"]):
             if word.lower() in linha.lower():
                 ocorrencias.append({
-                    "linha": i +1
-                })
+                    "linha": i + 1
+                    })
         if ocorrencias:
             result.append({
                 "palavra": word,
@@ -19,11 +19,6 @@ def exists_word(word, instance: Queue):
                 "ocorrencias": ocorrencias
             })
         return result
-
-
-
-
-
 
 
 def search_by_word(word, instance):

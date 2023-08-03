@@ -38,10 +38,8 @@ def file_metadata(instance: Queue, position):
     try:
         result = instance.search(position)
         print(result)
-    except:
+    except IndexError:
         sys.stderr.write("Posição inválida")
-
-    
 
 
 process("statics/nome_pedro.txt", queueModel)
