@@ -33,8 +33,15 @@ def remove(instance: Queue):
         print(f"Arquivo {remove_file['nome_do_arquivo']} removido com sucesso")
 
 
-def file_metadata(instance, position):
+def file_metadata(instance: Queue, position):
     """Aqui irá sua implementação"""
+    try:
+        result = instance.search(position)
+        print(result)
+    except:
+        sys.stderr.write("Posição inválida")
+
+    
 
 
 process("statics/nome_pedro.txt", queueModel)
